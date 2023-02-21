@@ -40,17 +40,29 @@
 									<div class="collapsible-wrapper">
 										<ul class="list-unstyled">
 										{% for s in subsubsection.subsections %}
-										{% set subsubsubsection = get_section(path=s) %}
-											{% if subsubsubsection.pages %}
-													<h6 class="collapsible-section">{{ subsubsubsection.extra.sidebar | safe }}</h6>
+											{% set subsubsubsection = get_section(path=s) %}
+											<h6 class="collapsible-section">{{ subsubsubsection.extra.sidebar | safe }}</h6>
+											<div class="collapsible-wrapper">
+												<ul class="list-unstyled">
+												{% if subsubsubsection.pages %}
+													{% for page in subsubsubsection.pages %}                           
+															<li><a class="docs-link{% if current_url == page.permalink %} active{% endif %}" href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></li>
+													{% endfor %}
+												{% endif %}
+												{% for s in subsubsubsection.subsections %}
+													{% set sub4levelsection = get_section(path=s) %}
+													<h6 class="collapsible-section">{{ sub4levelsection.extra.sidebar | safe }}</h6>
 													<div class="collapsible-wrapper">
 														<ul class="list-unstyled">
-														{% for page in subsubsubsection.pages %}                           
+														{% for page in sub4levelsection.pages %}                           
 																<li><a class="docs-link{% if current_url == page.permalink %} active{% endif %}" href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></li>
 														{% endfor %}
 														</ul>
 													</div>
-											{% endif %}
+												{% endfor %}
+												</ul>
+											</div>
+
 										{% endfor %}
 										</ul>
 									</div>
