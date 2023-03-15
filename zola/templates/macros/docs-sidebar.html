@@ -1,3 +1,28 @@
+
+{% macro render_nested_section(subsubsection) %}
+{% for s in subsubsection.subsections %}
+	{% set subsubsubsection = get_section(path=s) %}
+	{% if subsubsubsection.pages %}
+			<h6 class="collapsible-section">{{ subsubsubsection.extra.sidebar | safe }}</h6>
+			<div class="collapsible-wrapper">
+				<ul class="list-unstyled">
+				{% for page in subsubsubsection.pages %}                           
+						<li><a class="docs-link{% if current_url == page.permalink %} active{% endif %}" href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></li>
+				{% endfor %}
+				</ul>
+			</div>
+	{% endif %}
+	{% if subsubsubsection.subsections %}
+	<h6 class="collapsible-section"> {{ subsubsection.extra.sidebar | safe }} </h6>
+	<div class="collapsible-wrapper">
+		<ul class="list-unstyled">
+		{{macros_sidebar::render_nested_section(subsubsection=subsubsubsection)}}
+		</ul>
+	</div>
+	{% endif %}
+{% endfor %}
+{% endmacro %}
+
 {% macro docs_sidebar(current_section) %}
 <div class="col-lg-5 col-xl-4 docs-sidebar">
 	<nav class="docs-links" aria-label="Main navigation">
@@ -39,31 +64,7 @@
 									<h4 class="collapsible-section"> {{ subsubsection.extra.sidebar | safe }} </h4>
 									<div class="collapsible-wrapper">
 										<ul class="list-unstyled">
-										{% for s in subsubsection.subsections %}
-											{% set subsubsubsection = get_section(path=s) %}
-											<h6 class="collapsible-section">{{ subsubsubsection.extra.sidebar | safe }}</h6>
-											<div class="collapsible-wrapper">
-												<ul class="list-unstyled">
-												{% if subsubsubsection.pages %}
-													{% for page in subsubsubsection.pages %}                           
-															<li><a class="docs-link{% if current_url == page.permalink %} active{% endif %}" href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></li>
-													{% endfor %}
-												{% endif %}
-												{% for s in subsubsubsection.subsections %}
-													{% set sub4levelsection = get_section(path=s) %}
-													<h6 class="collapsible-section">{{ sub4levelsection.extra.sidebar | safe }}</h6>
-													<div class="collapsible-wrapper">
-														<ul class="list-unstyled">
-														{% for page in sub4levelsection.pages %}                           
-																<li><a class="docs-link{% if current_url == page.permalink %} active{% endif %}" href="{{ page.permalink | safe }}">{{ page.title | safe }}</a></li>
-														{% endfor %}
-														</ul>
-													</div>
-												{% endfor %}
-												</ul>
-											</div>
-
-										{% endfor %}
+											{{macros_sidebar::render_nested_section(subsubsection=subsubsection)}}
 										</ul>
 									</div>
 								{% endif %}
