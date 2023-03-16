@@ -13,7 +13,7 @@
 			</div>
 	{% endif %}
 	{% if subsubsubsection.subsections %}
-	<h6 class="collapsible-section"> {{ subsubsection.extra.sidebar | safe }} </h6>
+	<h6 class="collapsible-section"> {{ subsubsubsection.extra.sidebar | safe }} </h6>
 	<div class="collapsible-wrapper">
 		<ul class="list-unstyled">
 		{{macros_sidebar::render_nested_section(subsubsection=subsubsubsection)}}
