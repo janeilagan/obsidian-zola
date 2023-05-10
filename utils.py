@@ -291,7 +291,7 @@ class Settings:
         "SITE_TITLE_TAB": "",
         "LANDING_DESCRIPTION": "I have nothing but intelligence.",
         "LANDING_BUTTON": "Click to steal some👆",
-        "SORT_BY": "title",
+        "SORT_BY": "weight",
         "GANALYTICS": "",
         "SLUGIFY": "y",
         "HOME_GRAPH": "y",

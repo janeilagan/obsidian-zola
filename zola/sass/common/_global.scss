@@ -183,6 +183,27 @@ body {
   border-top: 1px solid $gray-200;
 }
 
+.docs-navigation,
+.blog-navigation {
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding-top:2rem
+}
+.docs-navigation a,
+.blog-navigation a {
+  font-size:.9rem
+}
+@media (min-width: 992px) {
+  .docs-navigation,
+  .blog-navigation {
+    margin-bottom: 2rem
+  }
+  .docs-navigation a,
+  .blog-navigation a {
+    font-size:1rem
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .docs-navigation, .blog-navigation {
     a {
