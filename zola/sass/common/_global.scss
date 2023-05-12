@@ -58,7 +58,21 @@ h6.collapsible-section,
 .h4.collapsible-section,
 .h5.collapsible-section,
 .h6.collapsible-section {
-  margin: 0.5em 24px 0.5em 0;
+
+  @media (min-width: 992px) {
+    margin-right: 24px;
+    margin-top: 0.5em!important;
+    margin-bottom: 0.5em!important;
+  }
+
+  margin-top: 0.5em!important;
+  margin-bottom: 0.5em!important;
+}
+
+.collapsible-wrapper {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5em;
+  }
 }
 
 
