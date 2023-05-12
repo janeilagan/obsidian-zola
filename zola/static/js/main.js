@@ -12,10 +12,10 @@ document.getElementById("mode").addEventListener("click", () => {
 	if (graph) {
 		graph.setOptions({
 			nodes: {
-				color: isDark() ? "#8c8e91" : "#dee2e6",
+				color: isDark() ? "#70AF85" : "#C6EBC9",
 				font: {
 					color: isDark() ? "#c9cdd1" : "#616469",
-					strokeColor: isDark() ? "#c9cdd1" : "#616469",
+					strokeColor: isDark() ? "#70AF85" : "#C6EBC9",
 				},
 			},
 		});

@@ -207,7 +207,7 @@ class DocPath:
         # The replacement might not be necessary, filenames cannot contain double quotes
         title = " ".join(
             [
-                item if item[0].isupper() else item.title()
+                item if item[0].isupper() else item
                 for item in self.old_path.stem.split(" ")
             ]
         ).replace('"', r"\"")
