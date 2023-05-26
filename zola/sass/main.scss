@@ -33,3 +33,12 @@
 /* @import custom styles */
 @import "graph.scss";
 @import "custom.scss";
+// Replace this with your own font imports!
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Quicksand:wght@500;600&family=Ubuntu+Mono&display=swap');
+:root {
+  --font-body: 'Quicksand', sans-serif !important;
+  --font-header: 'Quicksand', sans-serif;
+  --font-mono: 'Ubuntu Mono', monospace;
+  --font-page: 'Cedarville Cursive', cursive;
+}
+

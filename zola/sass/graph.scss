@@ -10,7 +10,9 @@ body.home {
 		z-index: 1;
 
 		div.home-background {
+
 			background: rgba(255,255,255,0.3);
+
 			z-index: 2;
 			pointer-events: none;
 		}
@@ -26,14 +28,16 @@ body.home {
 	}
 
 	footer {
-		background: rgba(255,255,255,0.85);
+		background: rgba(255,255,255,0.60);
 		z-index: 2;
 	}
 }
 
 body.dark {
 	> div.home div.home-background,footer{
+
 		background: rgba($color: #212529, $alpha: 0.3);
+
 		z-index: 2;
 		pointer-events: none;
 	}
