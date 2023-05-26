@@ -16,13 +16,14 @@ $yellow:   #ffe000;
 $black:    #1d2d35;
 $beige:    #fbf7f0;
 // $red:      #e55235;
-$purple:   #36862f;
+$purple:   #5d2f86;
 $brown:    #aa9c84;
+$green:    #198754;
+$green-300: #81C784;
+$blue-300: #8ed6fb;
+$pink-500: #d32e9d;
 
-$blue-300: #8efbbb;
-$pink-500: #70d32e;
-
-$primary: $purple;
+$primary: $green;
 
 // Options
 //
@@ -99,13 +100,10 @@ $border-color:                $gray-200;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-
-
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      "Inter", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-monospace:       "Fira Code", sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:            $font-family-sans-serif;
-$font-family-cursive:         var(--font-page);
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem; // Assumes the browser default, typically `16px`
@@ -139,7 +137,6 @@ $navbar-nav-link-padding-x:         0.5rem;
 $navbar-light-color:                $black;
 $navbar-light-hover-color:          $primary;
 $navbar-light-active-color:         $primary;
-$navbar-font-family:                $font-family-cursive;
 
 // Cards
 
