@@ -46,6 +46,36 @@ h6,
   }
 }
 
+h1.collapsible-section,
+h2.collapsible-section,
+h3.collapsible-section,
+h4.collapsible-section,
+h5.collapsible-section,
+h6.collapsible-section,
+.h1.collapsible-section,
+.h2.collapsible-section,
+.h3.collapsible-section,
+.h4.collapsible-section,
+.h5.collapsible-section,
+.h6.collapsible-section {
+
+  @media (min-width: 992px) {
+    margin-right: 24px;
+    margin-top: 0.5em!important;
+    margin-bottom: 0.5em!important;
+  }
+
+  margin-top: 0.5em!important;
+  margin-bottom: 0.5em!important;
+}
+
+.collapsible-wrapper {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5em;
+  }
+}
+
+
 .home h1 {
   /* font-size: calc(1.375rem + 1.5vw); */
   font-size: calc(1.875rem + 1.5vw);
@@ -167,6 +197,27 @@ body {
   border-top: 1px solid $gray-200;
 }
 
+.docs-navigation,
+.blog-navigation {
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding-top:2rem
+}
+.docs-navigation a,
+.blog-navigation a {
+  font-size:.9rem
+}
+@media (min-width: 992px) {
+  .docs-navigation,
+  .blog-navigation {
+    margin-bottom: 2rem
+  }
+  .docs-navigation a,
+  .blog-navigation a {
+    font-size:1rem
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .docs-navigation, .blog-navigation {
     a {
@@ -229,4 +280,11 @@ article {
   hr {
     margin: 3rem 0;
   }
+}
+
+.folder {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 0 0.5em 0.5em 0;
 }
